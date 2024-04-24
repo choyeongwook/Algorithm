@@ -14,7 +14,8 @@ for i in range(2, n+1):
         square = j ** 2
         if square > i:
             break
-        d[i] = min(d[i], d[i-square] + 1)
+        if d[i] > d[i-square]+1:
+            d[i] = d[i-square]+1
 
 print(d[n])
         
